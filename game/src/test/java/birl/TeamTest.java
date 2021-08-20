@@ -2,17 +2,35 @@
 
 package birl;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 public class TeamTest {
-    /**
-     * Rigorous Test :-)
-     */
+    
+    Person person = new Person("person", "password");
+    Team team = new Team(person);
+
+    @BeforeEach
+    public void setUp(){
+        person = new Person("person", "password");
+        team = new Team(person);
+    }
+
+    /** Basic utilities of a team:
+     *  passes when adding/removing fighter
+     *  to/from team is possible
+    */
     @Test
-    public void shouldAnswerWithTrue(){
-        assertTrue( true );
+    public void addAndRemoveFighter(){
+        Fighter fighter = new Fighter(0, 0, 0, team);
+        
+        assertEquals(fighter, team.getFighter(0));
+
+        team.removeFighter(fighter);
+
+        assertEquals(null, team.getFighter(0));
     }
 }

@@ -10,21 +10,25 @@ import org.junit.jupiter.api.Test;
 
 public class PersonTest {
 
-    Person person = new Person("person", "password");
+    Person regularUser = new Person("regularUser", "password");
+    Person admin = new Person("admin", "password");
 
     @BeforeEach
-    void setup(){
-        person = new Person("person", "password"); 
+    void setUp(){
+        regularUser = new Person("regularUser", "password");
+        admin = new Person("admin", "password");
+        admin.addAdminPrivilege();
     }
 
-    /** Anti victory points cheating
-     *  - passes when non-admin person
-     *  cannot change it's vp.
+    /** Anti victory points cheating:
+     *  passes when admin can change VP
+     *  and regular users cannot
     */
     @Test
-    public void addTeamToPerson(){
-        //TODO: fix test, rn it only prints out "Only admins ...", should return 0!
-        person.setVictoryPoints(1000);
-        assertEquals(0, person.getVictoryPoints());
+    public void addVPToPerson(){
+        regularUser.setVictoryPoints(1000);
+        admin.setVictoryPoints(1000);
+        assertEquals(0, regularUser.getVictoryPoints());
+        assertEquals(1000, admin.getVictoryPoints());
     }
 }
