@@ -27,10 +27,14 @@ public class Person {
     public void setVictoryPoints(int victoryPoints){    
         if(userLvl == 2)
             this.victoryPoints = victoryPoints;
-        else System.err.println("Only admins are allowed to set their victory points.");
+        else {
+            System.err.println("Only admins are allowed to set their victory points.");
+            this.victoryPoints = 0;
+        }
     }
 
-    public void setTeam(Team team) throws Exception{  
+    // should regular users be able to chose team?
+    public void setTeam(Team team) {  
         if(team != null)
             if(userLvl == 2)
                 this.team = team;
