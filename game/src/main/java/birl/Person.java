@@ -33,7 +33,7 @@ public class Person {
         }
     }
 
-    // should regular users be able to chose team?
+    // should regular users be able to choose team?
     public void setTeam(Team team) {  
         if(team != null)
             if(userLvl == 2)
