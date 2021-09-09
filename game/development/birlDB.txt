@@ -1,0 +1,104 @@
+CREATE TABLE type(
+
+	id				SERIAL		PRIMARY KEY,
+	name			VARCHAR(50)	NOT NULL,
+	good_against	VARCHAR(50)	NOT NULL,
+	bad_against		VARCHAR(50)	NOT NULL
+);
+
+CREATE TABLE character(
+
+	id			SERIAL		PRIMARY KEY,
+	name		VARCHAR(50)	UNIQUE NOT NULL,
+	lvl_scaling	DOUBLE		NOT NULL,
+	type		VARCHAR(50)	NOT NULL	references type(name),
+	ability		VARCHAR(500)
+);
+
+CREATE TABLE fighter(
+	
+	id		SERIAL		PRIMARY KEY references character(id),
+	lvl		SERIAL		NOT NULL,
+	hp		INT			NOT NULL,
+	move1	SERIAL		references move(id),
+	move2	SERIAL		references move(id),
+	move3	SERIAL		references move(id),
+	gear	SERIAL		references gear(id),
+	team	SERIAL		references team(id),
+
+	CONSTRAINT valid_number
+		CHECK(LVL <= 100)
+);
+
+CREATE TABLE moves(
+
+	id			SERIAL		PRIMARY KEY,
+	name		VARCHAR(50)	UNIQUE,
+	type		VARCHAR(50)	references type(name),
+	damage		INT,
+	heal		INT,
+	effect		SERIAL		references effect(id)
+);
+
+CREATE TABLE gear(
+
+	id		SERIAL			PRIMARY KEY,
+	name		VARCHAR(50)	UNIQUE NOT NULL,
+	damage		INT			NOT NULL,
+	heal		INT			NOT NULL,
+	effect		SERIAL		references effect(id)
+);
+
+CREATE TABLE effect(
+
+	id		SERIAL		PRIMARY KEY,
+	text	VARCHAR(500)	NOT NULL,
+);
+
+CREATE TABLE person(
+
+	id			SERIAL		PRIMARY KEY,
+	name		VARCHAR(50)	UNIQUE	NOT NULL,
+	password	VARCHAR(50)	NOT NULL,
+	victory_points	INT,
+	team_id		SERIAL		references team(id),
+	user_lvl	SERIAL,
+	CONSTRAINT valid_number
+		CHECK(role <= 2)
+);
+
+CREATE TABLE team(
+
+	id			SERIAL		PRIMARY KEY,
+	owner		SERIAL		references person(id),
+	fighter1	SERIAL		references fighter(id),
+	fighter2	SERIAL		references fighter(id),
+	fighter3	SERIAL		references fighter(id),
+	fighter4	SERIAL		references fighter(id),
+	fighter5	SERIAL		references fighter(id),
+);
+
+INSERT INTO type(id, name, good_against, bad_against) VALUES (1, 'Human', 'Animal', 'God');
+INSERT INTO type(id, name, good_against, bad_against) VALUES (2, 'Animal', 'Plant', 'Human');
+INSERT INTO type(id, name, good_against, bad_against) VALUES (3, 'Plant', 'God', 'Animal');
+INSERT INTO type(id, name, good_against, bad_against) VALUES (4, 'God', 'Human', 'Plant');
+
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (1, 'Drunk Douchebag', 0.0, 'Human', 'This guy is that drunk, he cannot even hold his beer.' );
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (2, 'Workaholic', 0.0, 'Human', 'I swear I had lunch in at least once last month...');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (3, 'Gamer Guy', 0.0, 'Human', 'Dude...League of Legends is not even a videogame!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (4, 'Gym Alpha', 0.0, 'Human', 'Damn, look at me bruh, I am looking beefy as hell!');
+
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (5, 'Long Wiener', 0.0, 'Animal', 'Gimme sausy and I am ur friend!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (6, 'Chicken', 0.0, 'Animal', 'Bukbuk...BUUUK!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (7, 'Extremely Fast Turtle', 0.0, 'Animal', 'ZOOOM ZOOOM!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (8, 'Hedge-Hog', 0.0, 'Animal', 'This creature is a hedgehog-hog hybrid.');
+
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (9, 'Beer-Barbar', 0.0, 'God', 'I am the allfather of beer! BURP...');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (10, 'Jesus', 0.0, 'God', 'I am the Messiah bitch!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (11, 'Richard Batsbak', 0.0, 'God', 'Verdammte Scheiße...Riket! Dein Waaghen!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (12, 'Aprodite', 0.0, 'God', 'Hey cutie...Come be my slave!');
+
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (13, 'Piranha Plant', 0.0, 'Plant', 'Chomp Chomp Chomp!');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (14, 'Regular Cactus', 0.0, 'Plant', 'This cactus' spikes are even sharper than your mom...);
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (15, 'Marihuana Plant', 0.0, 'Plant', 'Let us get high bruh.');
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (16, 'Wallflower', 0.0, 'Plant', 'This is just a shy little wallflower enjoying the sun.');
