@@ -2,10 +2,11 @@ package birl.Model;
 
 public class Person {
     
+    private int id;
     private String username;
     private String password;
     private int victoryPoints;
-    private int userLvl = 1;        // 1 = normal person, 2 = admin
+    private int userLvl = 1;        // 1 = regular person, 2 = admin
     private Team team;
 
     public Person(String username, String password){
@@ -16,6 +17,8 @@ public class Person {
             this.username = username;
             this.password = password;
         }
+
+        // TODO: DB lookup for next id + set it
     }
 
     public void addAdminPrivilege(){   this.userLvl = 2;   }

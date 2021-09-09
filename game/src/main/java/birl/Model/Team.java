@@ -2,6 +2,7 @@ package birl.Model;
 
 public class Team {
     
+    private int id;
     private Person owner;
     private Fighter [] members = new Fighter[5];
 

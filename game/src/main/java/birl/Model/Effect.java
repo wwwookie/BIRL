@@ -3,5 +3,8 @@
 package birl.Model;
 
 public class Effect {
+
+    private String id;
+    private String text;
     
 }

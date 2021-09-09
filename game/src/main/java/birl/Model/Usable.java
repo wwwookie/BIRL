@@ -2,17 +2,23 @@ package birl.Model;
 
 public abstract class Usable {
     
+    private int id;
+    private String name;
     private int damage;
     private int heal;
     private Type type;
     private Effect effect;
 
-    public int getDamage(){ return damage;  };
+    public int getId(){ return id;  };
 
-    public int getHeal(){ return heal;  };
+    public String getName(){    return name;    }
 
-    public Type getType(){ return type;  };
+    public int getDamage(){ return damage;  }
 
-    public Effect getEffect(){ return effect;  };
+    public int getHeal(){ return heal;  }
+
+    public Type getType(){ return type;  }
+
+    public Effect getEffect(){ return effect;  }
 
 }

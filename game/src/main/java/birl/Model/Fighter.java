@@ -1,14 +1,9 @@
 package birl.Model;
 
-public class Fighter{
+public class Fighter extends Character{
 
-    private int id;
     private int lvl;
     private int hp;
-    private double lvl_scaling;
-    private Ability ability;
-    private Type type;
-    private String name;
     private Move [] moves = new Move[3];
     private Gear gear;
     private Team team;
