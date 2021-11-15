@@ -1,7 +1,7 @@
 CREATE TABLE type(
 
-	id				SERIAL		PRIMARY KEY,
-	name			VARCHAR(50)	NOT NULL,
+	id			SERIAL		PRIMARY KEY,
+	name		VARCHAR(50)	UNIQUE NOT NULL,
 	good_against	VARCHAR(50)	NOT NULL,
 	bad_against		VARCHAR(50)	NOT NULL
 );
@@ -10,24 +10,24 @@ CREATE TABLE character(
 
 	id			SERIAL		PRIMARY KEY,
 	name		VARCHAR(50)	UNIQUE NOT NULL,
-	lvl_scaling	DOUBLE		NOT NULL,
+	lvl_scaling	DECIMAL		NOT NULL,
 	type		VARCHAR(50)	NOT NULL	references type(name),
 	ability		VARCHAR(500)
 );
 
-CREATE TABLE fighter(
-	
-	id		SERIAL		PRIMARY KEY references character(id),
-	lvl		SERIAL		NOT NULL,
-	hp		INT			NOT NULL,
-	move1	SERIAL		references move(id),
-	move2	SERIAL		references move(id),
-	move3	SERIAL		references move(id),
-	gear	SERIAL		references gear(id),
-	team	SERIAL		references team(id),
+CREATE TABLE effect(
 
-	CONSTRAINT valid_number
-		CHECK(LVL <= 100)
+	id		SERIAL		PRIMARY KEY,
+	text	VARCHAR(500)	NOT NULL
+);
+
+CREATE TABLE gear(
+
+	id		SERIAL			PRIMARY KEY,
+	name		VARCHAR(50)	UNIQUE NOT NULL,
+	damage		INT			NOT NULL,
+	heal		INT			NOT NULL,
+	effect		SERIAL		references effect(id)
 );
 
 CREATE TABLE moves(
@@ -40,19 +40,18 @@ CREATE TABLE moves(
 	effect		SERIAL		references effect(id)
 );
 
-CREATE TABLE gear(
+CREATE TABLE fighter(
+	
+	id		SERIAL		PRIMARY KEY references character(id),
+	lvl		SERIAL		NOT NULL,
+	hp		INT			NOT NULL,
+	move1	SERIAL		references moves(id),
+	move2	SERIAL		references moves(id),
+	move3	SERIAL		references moves(id),
+	gear	SERIAL		references gear(id),
 
-	id		SERIAL			PRIMARY KEY,
-	name		VARCHAR(50)	UNIQUE NOT NULL,
-	damage		INT			NOT NULL,
-	heal		INT			NOT NULL,
-	effect		SERIAL		references effect(id)
-);
-
-CREATE TABLE effect(
-
-	id		SERIAL		PRIMARY KEY,
-	text	VARCHAR(500)	NOT NULL,
+	CONSTRAINT valid_number
+		CHECK(LVL <= 100)
 );
 
 CREATE TABLE person(
@@ -61,10 +60,9 @@ CREATE TABLE person(
 	name		VARCHAR(50)	UNIQUE	NOT NULL,
 	password	VARCHAR(50)	NOT NULL,
 	victory_points	INT,
-	team_id		SERIAL		references team(id),
 	user_lvl	SERIAL,
 	CONSTRAINT valid_number
-		CHECK(role <= 2)
+		CHECK(user_lvl <= 2)
 );
 
 CREATE TABLE team(
@@ -75,8 +73,10 @@ CREATE TABLE team(
 	fighter2	SERIAL		references fighter(id),
 	fighter3	SERIAL		references fighter(id),
 	fighter4	SERIAL		references fighter(id),
-	fighter5	SERIAL		references fighter(id),
+	fighter5	SERIAL		references fighter(id)
 );
+ALTER TABLE fighter ADD COLUMN team	SERIAL		references team(id);
+ALTER TABLE person ADD COLUMN team_id		SERIAL		references team(id);
 
 INSERT INTO type(id, name, good_against, bad_against) VALUES (1, 'Human', 'Animal', 'God');
 INSERT INTO type(id, name, good_against, bad_against) VALUES (2, 'Animal', 'Plant', 'Human');
@@ -99,6 +99,6 @@ INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (11, 'Richard
 INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (12, 'Aprodite', 0.0, 'God', 'Hey cutie...Come be my slave!');
 
 INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (13, 'Piranha Plant', 0.0, 'Plant', 'Chomp Chomp Chomp!');
-INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (14, 'Regular Cactus', 0.0, 'Plant', 'This cactus' spikes are even sharper than your mom...);
+INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (14, 'Regular Cactus', 0.0, 'Plant', 'This cactus spikes are even sharper than your mom...');
 INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (15, 'Marihuana Plant', 0.0, 'Plant', 'Let us get high bruh.');
 INSERT INTO character(id, name, lvl_scaling, type, ability) VALUES (16, 'Wallflower', 0.0, 'Plant', 'This is just a shy little wallflower enjoying the sun.');
