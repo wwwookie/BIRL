@@ -1,0 +1,8 @@
+Here are all updates logged since November 2021:
+
+----------------------------------------------------------
+
+[15. November 2021]	created db, create DataBaseManager
+
+----------------------------------------------------------
+TODO: fix Main, error occurs with DataBaseManager 
