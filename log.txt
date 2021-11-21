@@ -1,8 +1,0 @@
-Here are all updates logged since November 2021:
-
-----------------------------------------------------------
-
-[15. November 2021]	created db
-
-----------------------------------------------------------
-TODO: write db class and connect to postgres db.
