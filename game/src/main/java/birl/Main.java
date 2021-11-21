@@ -2,12 +2,13 @@ package birl;
 
 public class Main {
     
-    // test
-    DataBaseManager dbm = new DataBaseManager(
-        "jdbc:postgresql://localhost:5432/birl",
-        "wwwookie",
-        "supersecurepwd",
-        "SELECT * FROM type");
+    public static void main(String[] args) {
+        // test
+        DataBaseManager dbm = new DataBaseManager(
+            "jdbc:postgresql://localhost:5432/birl",
+            "wwwookie",
+            "supersecurepwd");
 
-    dbm.connectToDB();      // TODO: fix error here
+        dbm.executeQuery("SELECT * FROM type");
+    }
 }
