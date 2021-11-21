@@ -10,16 +10,14 @@ public class DataBaseManager {
     private static String url;
     private static String user;        // change to 'postgres'?
     private static String pwd;
-    private static String query;
 
-    public DataBaseManager(String url, String user, String pwd, String query){
+    public DataBaseManager(String url, String user, String pwd){
         DataBaseManager.url = url;
         DataBaseManager.user = user;
         DataBaseManager.pwd = pwd;
-        DataBaseManager.query = query;
     }
 
-    public void connectToDB(){
+    public void executeQuery(String query){
 
         try(Connection conn = DriverManager.getConnection(url, user, pwd);
         Statement stmt = conn.createStatement();
@@ -33,7 +31,10 @@ public class DataBaseManager {
             System.out.println(", bad against: " + rs.getString("bad_against"));
             }
         } catch (SQLException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
     }
+
+    // TODO: find smart way to print out query, no matter which.
+    // above while-loop is pretty static... 
 }
