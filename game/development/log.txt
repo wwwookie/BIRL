@@ -1,4 +1,4 @@
-Here are all updates logged since November 2021:
+This is the BIRL update-log since November 2021:
 
 ----------------------------------------------------------
 
@@ -6,5 +6,10 @@ Here are all updates logged since November 2021:
 [21. November 2021]	fixed DataBaseManager problem (had no main method lol)
 			fixed "no suitable driver found"-exc.
 			-> established proper connection to birl db
+
+[13. Dezember 2021]	added minimal testing in DataBaseManagerTest
+			added selectNameFromTableByID() in DataBaseManager
+
 ----------------------------------------------------------
-TODO:	find a way to execute queries dynamicaly, not like executeQuery() does rn.
+TODO:	- figure out if dynamic query execution is needed
+	- find good name for class Person/Fighter/Character e.g. Coach/Fighter/AcutalFighter
