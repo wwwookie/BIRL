@@ -9,6 +9,6 @@ public class Main {
             "wwwookie",
             "supersecurepwd");
 
-        dbm.executeQuery("SELECT * FROM type");
+        System.out.println(dbm.selectNameFromTableByID("character", 1));
     }
 }
