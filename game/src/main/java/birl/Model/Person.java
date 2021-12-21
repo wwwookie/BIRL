@@ -12,13 +12,13 @@ public class Person {
     public Person(String username, String password){
         if(username == null
             || password == null)
-            System.err.println("Every person must contain valid: username, password and team");
+            System.err.println("Every person must contain valid: username, password");
         else{
             this.username = username;
             this.password = password;
         }
 
-        // TODO: DB lookup for next id + set it
+        // TODO: create entry in person (db)
     }
 
     public void addAdminPrivilege(){   this.userLvl = 2;   }
@@ -36,13 +36,17 @@ public class Person {
         }
     }
 
-    // should regular users be able to choose team?
-    public void setTeam(Team team) {  
+    // should regular users be able to choose team? - will do these kind of restrictions later
+    public void setTeam(Team team){  
         if(team != null)
             if(userLvl == 2)
                 this.team = team;
             else System.err.println("Only admins are allowed to chose their team.");
         else System.err.println("This person's team is empty.");
+    }
+
+    public void addFighterToTeam(Fighter fighter){
+        team.addFighter(fighter);
     }
 
 }
