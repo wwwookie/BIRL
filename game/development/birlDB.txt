@@ -27,7 +27,7 @@ CREATE TABLE gear(
 	name		VARCHAR(50)	UNIQUE NOT NULL,
 	damage		INT			NOT NULL,
 	heal		INT			NOT NULL,
-	effect		SERIAL		references effect(id)
+	effect		INT		references effect(id)
 );
 
 CREATE TABLE moves(
@@ -37,18 +37,18 @@ CREATE TABLE moves(
 	type		VARCHAR(50)	references type(name),
 	damage		INT,
 	heal		INT,
-	effect		SERIAL		references effect(id)
+	effect		INT		references effect(id)
 );
 
 CREATE TABLE fighter(
 	
-	id		SERIAL		PRIMARY KEY references character(id),
-	lvl		SERIAL		NOT NULL,
+	id		INT		PRIMARY KEY references character(id),
+	lvl		INT		NOT NULL,
 	hp		INT			NOT NULL,
-	move1	SERIAL		references moves(id),
-	move2	SERIAL		references moves(id),
-	move3	SERIAL		references moves(id),
-	gear	SERIAL		references gear(id),
+	move1	INT		references moves(id),
+	move2	INT		references moves(id),
+	move3	INT		references moves(id),
+	gear	INT		references gear(id),
 
 	CONSTRAINT valid_number
 		CHECK(LVL <= 100)
@@ -60,7 +60,7 @@ CREATE TABLE person(
 	name		VARCHAR(50)	UNIQUE	NOT NULL,
 	password	VARCHAR(50)	NOT NULL,
 	victory_points	INT,
-	user_lvl	SERIAL,
+	user_lvl	INT,
 	CONSTRAINT valid_number
 		CHECK(user_lvl <= 2)
 );
@@ -68,15 +68,16 @@ CREATE TABLE person(
 CREATE TABLE team(
 
 	id			SERIAL		PRIMARY KEY,
-	owner		SERIAL		references person(id),
-	fighter1	SERIAL		references fighter(id),
-	fighter2	SERIAL		references fighter(id),
-	fighter3	SERIAL		references fighter(id),
-	fighter4	SERIAL		references fighter(id),
-	fighter5	SERIAL		references fighter(id)
+	owner		INT			references person(id),
+	fighter1	INT			references fighter(id),
+	fighter2	INT			references fighter(id),
+	fighter3	INT			references fighter(id),
+	fighter4	INT			references fighter(id),
+	fighter5	INT			references fighter(id)
 );
-ALTER TABLE fighter ADD COLUMN team	SERIAL		references team(id);
-ALTER TABLE person ADD COLUMN team_id		SERIAL		references team(id);
+
+--ALTER TABLE fighter ADD COLUMN team	SERIAL		references team(id);
+--ALTER TABLE person ADD COLUMN team_id		INT		references team(id);
 
 INSERT INTO type(id, name, good_against, bad_against) VALUES (1, 'Human', 'Animal', 'God');
 INSERT INTO type(id, name, good_against, bad_against) VALUES (2, 'Animal', 'Plant', 'Human');
