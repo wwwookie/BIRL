@@ -7,9 +7,10 @@ public class Person {
     private String password;
     private int victoryPoints;
     private int userLvl = 1;        // 1 = regular person, 2 = admin
-    private Team team;
+    private Fighter[] team = new Fighter[5];
 
     public Person(String username, String password){
+        // TODO: check for username twining!
         if(username == null
             || password == null)
             System.err.println("Every person must contain valid: username, password");
@@ -37,7 +38,7 @@ public class Person {
     }
 
     // should regular users be able to choose team? - will do these kind of restrictions later
-    public void setTeam(Team team){  
+    public void setTeam(Fighter[] team){  
         if(team != null)
             if(userLvl == 2)
                 this.team = team;
@@ -46,7 +47,11 @@ public class Person {
     }
 
     public void addFighterToTeam(Fighter fighter){
-        team.addFighter(fighter);
+        for(int i = 0; i < team.length; i++)
+            if(team[i] == null){
+                team[i] = fighter;
+                i = team.length;
+            }
     }
 
 }

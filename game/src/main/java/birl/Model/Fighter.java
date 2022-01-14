@@ -6,11 +6,10 @@ public class Fighter extends Character{
     private int hp;
     private Move [] moves = new Move[3];
     private Gear gear;
-    private Team team;
 
     public Fighter(){   };
 
-    public Fighter(int id, int lvl, int hp, Team team) {
+    public Fighter(int id, int lvl, int hp) {
         this.id = id;       // TODO: check if id is already existing in DB
         
         if(lvl > 0 || lvl < 101)
@@ -18,9 +17,6 @@ public class Fighter extends Character{
         else System.err.println("Lvl must be greater than 0 and smaller than 101.");
 
         this.hp = hp;
-        this.team = team;
-
-        team.addFighter(this);
     }
 
     /** @return this fighters moves. */
@@ -49,7 +45,4 @@ public class Fighter extends Character{
 
     /** Unequips this fighters gear. */
     public void removeGear(){   gear = null; }
-
-    // TODO: this is dangerous - find other way..
-    public void removeTeamOfFighter(){  team = null;    }
 }
