@@ -14,6 +14,9 @@ This is the BIRL update-log since November 2021:
 [21. Dezember 2021]	work on DB structure, working with constraint restrictions
 			-> find new focus, get back on track!
 
+[14. Januar 2021]	added item.txt and character.txt
+			added TextFileReader
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
-	- find new focus!
+	- keep working on TextFileHandler
