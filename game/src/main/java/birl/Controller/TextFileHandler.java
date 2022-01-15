@@ -11,8 +11,8 @@ import birl.Model.Character;
 
 public class TextFileHandler {
     
-    private ArrayList characterList = new ArrayList<Character>();
-    private ArrayList gearList = new ArrayList<Gear>();
+    private ArrayList <Character> characterList = new ArrayList<Character>();
+    private ArrayList <Gear> gearList = new ArrayList<Gear>();
 
     public TextFileHandler(File characters, File gears){
         extractCharactersFromTextFile(characters);
@@ -22,17 +22,105 @@ public class TextFileHandler {
     private void extractCharactersFromTextFile(File characters){
 
         char current;
+        String id = "";
+        String name = "";
+        String lvlScaling = "";      // using strings for all of these types
+        String type = "";            // makes reading from FileReader easier
+        String about = "";
         
-        try {
-            FileReader characterReader = new FileReader(characters);
+        // .txt file is built like this:
+        // id; name; lvlScaling; type; about;
+
+        try (FileReader characterReader = new FileReader(characters)){
 
             while(characterReader.ready()){
-                // read character ID
                 current = (char) characterReader.read();
 
+                // read character id
                 if(java.lang.Character.isDigit(current)){
-                    // read character name, text etc...
-                    // TODO: finish
+                    id = id + current;
+
+                    current = (char) characterReader.read();
+                    
+                    while(java.lang.Character.isDigit(current)){
+                        id = id + current;
+                        current = (char) characterReader.read();
+                    }
+
+                    // read character name
+                    if(current == ';'){
+                        current = (char) characterReader.read();
+
+                        while(java.lang.Character.isLetter(current) || java.lang.Character.isWhitespace(current)){
+                            name = name + current;
+                            current = (char) characterReader.read();
+                        }
+
+                        // read character lvlScaling
+                        if(current == ';'){
+                            current = (char) characterReader.read();
+                            
+                            while(java.lang.Character.isDigit(current)){
+                                lvlScaling = lvlScaling + current;
+                                current = (char) characterReader.read();
+                            }
+
+                            if(current == '.'){
+                                lvlScaling = lvlScaling + current;
+
+                                current = (char) characterReader.read();
+
+                                while(java.lang.Character.isDigit(current)){
+                                    lvlScaling = lvlScaling + current;
+                                    current = (char) characterReader.read();
+                                }
+
+                                // read character type
+                                if(current == ';'){
+                                    current = (char) characterReader.read();
+
+                                    while(java.lang.Character.isLetter(current)){
+                                        type = type + current;
+
+                                        current = (char) characterReader.read();
+                                    }
+
+                                    // read character about
+                                    if(current == ';'){
+                                        current = (char) characterReader.read();
+
+                                        while(java.lang.Character.isLetter(current) || 
+                                                java.lang.Character.isWhitespace(current) ||
+                                                current == '.' ||
+                                                current == ','){
+
+                                            about = about + current;
+
+                                            current = (char) characterReader.read();
+                                        }
+
+                                        // insert collected data into list of characters
+                                        characterList.add(new Character(Integer.parseInt(id), name, Double.parseDouble(lvlScaling), type, about));
+
+                                        // reset variables
+                                        id = "";
+                                        name = "";
+                                        lvlScaling = "";
+                                        type = "";
+                                        about = "";
+
+
+                                    } else System.out.println("Error on reading character-file: " + current + " found but ; expected");
+
+
+                                } else System.out.println("Error on reading character-file: " + current + " found but ; expected");
+
+
+                            } else System.out.println("Error on reading character-file: " + current + " found but . expected");
+
+                        } else System.out.println("Error on reading character-file: " + current + " found but ; expected");
+
+                    } else System.out.println("Error on reading character-file: " + current + " found but ; expected");
 
                 } else System.out.println("Error on reading character-file: " + current + " found but character ID expected.");
                 
@@ -43,11 +131,13 @@ public class TextFileHandler {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        
-        // TODO: implement
     }
 
     private void extractGearsFromTextFile(File gears){
         // TODO: implement
     }
+
+    public ArrayList <Character> getCharacterList(){    return characterList;   }
+
+    public ArrayList <Gear> getGearList(){  return gearList;    }
 }
