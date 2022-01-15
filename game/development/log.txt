@@ -5,18 +5,21 @@ This is the BIRL update-log since November 2021:
 [15. November 2021]	created db, create DataBaseManager
 
 [21. November 2021]	fixed DataBaseManager problem (had no main method lol)
-			fixed "no suitable driver found"-exc.
-			-> established proper connection to birl db
+					fixed "no suitable driver found"-exc.
+					-> established proper connection to birl db
 
 [13. Dezember 2021]	added minimal testing in DataBaseManagerTest
-			added selectNameFromTableByID() in DataBaseManager
+					added selectNameFromTableByID() in DataBaseManager
 
 [21. Dezember 2021]	work on DB structure, working with constraint restrictions
-			-> find new focus, get back on track!
+					-> find new focus, get back on track!
 
-[14. Januar 2021]	added item.txt and character.txt
-			added TextFileReader
+[14. Januar 2022]	added item.txt and character.txt
+					added TextFileReader
+
+[15. Januar 2022]	done with TextFileReader.extractCharactersFromTexFile()
+					added little testings to above class
 
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
-	- keep working on TextFileHandler
+		- keep working on TextFileHandler
