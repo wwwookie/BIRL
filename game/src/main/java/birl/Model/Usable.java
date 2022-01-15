@@ -6,7 +6,7 @@ public abstract class Usable {
     private String name;
     private int damage;
     private int heal;
-    private Type type;
+    private String type;
     private Effect effect;
 
     public int getId(){ return id;  };
@@ -17,7 +17,7 @@ public abstract class Usable {
 
     public int getHeal(){ return heal;  }
 
-    public Type getType(){ return type;  }
+    public String getType(){ return type;  }
 
     public Effect getEffect(){ return effect;  }
 

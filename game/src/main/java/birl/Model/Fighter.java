@@ -2,15 +2,16 @@ package birl.Model;
 
 public class Fighter extends Character{
 
+    private int fighterId;
     private int lvl;
     private int hp;
     private Move [] moves = new Move[3];
     private Gear gear;
 
-    public Fighter(){   };
+    public Fighter(int fighterId, int lvl, int hp, int characterId, String name, double lvlScaling, String type, String about) {
+        super(characterId, name, lvlScaling, type, about);
 
-    public Fighter(int id, int lvl, int hp) {
-        this.id = id;       // TODO: check if id is already existing in DB
+        this.fighterId = fighterId;       // TODO: check if id is already existing in DB
         
         if(lvl > 0 || lvl < 101)
             this.lvl = lvl;
@@ -26,7 +27,7 @@ public class Fighter extends Character{
      *  move-type must be equal to this fighters-type
     */
     public void setMove(Move move, int position) {   
-        if(type == move.getType())
+        if(type.equals(move.getType()))
             moves[position] = move;    
         else System.err.println("Fighter can't learn move, type-missmatch.");
     }
