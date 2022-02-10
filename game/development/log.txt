@@ -20,6 +20,10 @@ This is the BIRL update-log since November 2021:
 [15. Januar 2022]	done with TextFileReader.extractCharactersFromTexFile()
 					added little testings to above class
 
+[10. Februar 2022]	added some extract*FromTextFile
+					more testing
+					started with Controller implementation (init of TextFileHandler)
+					
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
-		- keep working on TextFileHandler
+		- keep working on TextFileHandler/add gears/moves/abilities/effects in .txt files
