@@ -1,11 +1,10 @@
 package birl.Controller;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class handles the connection to the BIRL database.
+ * DB will only include already existing Fighters and Persons.
  */
 public class DataBaseManager {
 
