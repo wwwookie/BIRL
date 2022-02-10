@@ -8,16 +8,35 @@ import java.io.IOException;
 
 import birl.Model.Gear;
 import birl.Model.Character;
+import birl.Model.Move;
+import birl.Model.Ability;
+import birl.Model.Effect;
+
+/**
+ *  Converts all lines from characters.txt file to Character objects.
+ *  All given Characters, Gears, Moves, Effects and Abilities are extracted from their given .txt file.
+ */
 
 public class TextFileHandler {
     
     private ArrayList <Character> characterList = new ArrayList<Character>();
     private ArrayList <Gear> gearList = new ArrayList<Gear>();
+    private ArrayList <Move> moveList = new ArrayList<Move>();
+    private ArrayList <Ability> abilityList = new ArrayList<Ability>();
+    private ArrayList <Effect> effectList = new ArrayList<Effect>();
 
-    public TextFileHandler(File characters, File gears){
+    public TextFileHandler(File characters, File gears, File moves, File abilities, File effects){
         extractCharactersFromTextFile(characters);
         extractGearsFromTextFile(gears);
+        extractMovesFromTextFile(moves);
+        extractAbilitiesFromTextFile(abilities);
+        extractEffectsFromTextFile(effects);
     }
+
+    /**
+     * Extracts all characters from a .txt file. File must match pattern (id; name; lvlScaling; type; about;).
+     * @param characters - file to be read
+     */
 
     private void extractCharactersFromTextFile(File characters){
 
@@ -133,11 +152,34 @@ public class TextFileHandler {
         }
     }
 
+    /**
+     * Extracts all gears from a .txt file. File must match pattern ().
+     * @param gears - file to be read
+     */
+
     private void extractGearsFromTextFile(File gears){
+        // TODO: implement
+    }
+
+    private void extractMovesFromTextFile(File moves){
+        // TODO: implement
+    }
+
+    private void extractEffectsFromTextFile(File effects){
+        // TODO: implement
+    }
+
+    private void extractAbilitiesFromTextFile(File abilities){
         // TODO: implement
     }
 
     public ArrayList <Character> getCharacterList(){    return characterList;   }
 
     public ArrayList <Gear> getGearList(){  return gearList;    }
+
+    public ArrayList <Move> getMoveList(){  return moveList;    }
+
+    public ArrayList <Ability> getAbilityList(){  return abilityList;    }
+
+    public ArrayList <Effect> getEffectList(){  return effectList;    }
 }
