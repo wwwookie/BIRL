@@ -24,6 +24,9 @@ This is the BIRL update-log since November 2021:
 					more testing
 					started with Controller implementation (init of TextFileHandler)
 					
+[19. März 2022]		worked on Usable and Fighter (fighter can now attack another fighter with gear/move)
+					added Duell class which will be the actual game loop
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- keep working on TextFileHandler/add gears/moves/abilities/effects in .txt files
