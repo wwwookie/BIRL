@@ -7,7 +7,6 @@ import birl.Model.Character;
 import birl.Model.Gear;
 import birl.Model.Move;
 import birl.Model.Ability;
-import birl.Model.Effect;
 
 // is one controller-class enough to handle whole application?
 // TODO: implement
@@ -25,7 +24,6 @@ public class Controller {
     ArrayList <Gear> gearList;
     ArrayList <Move> moveList;
     ArrayList <Ability> abilityList;
-    ArrayList <Effect> effectList;
 
     File homeDir;
     File characterFile;
@@ -63,6 +61,5 @@ public class Controller {
         gearList = tfh.getGearList();
         moveList = tfh.getMoveList();
         abilityList = tfh.getAbilityList();
-        effectList = tfh.getEffectList();
     }
 }
