@@ -10,7 +10,6 @@ import birl.Model.Gear;
 import birl.Model.Character;
 import birl.Model.Move;
 import birl.Model.Ability;
-import birl.Model.Effect;
 
 /**
  *  Converts all lines from characters.txt file to Character objects.
@@ -23,7 +22,7 @@ public class TextFileHandler {
     private ArrayList <Gear> gearList = new ArrayList<Gear>();
     private ArrayList <Move> moveList = new ArrayList<Move>();
     private ArrayList <Ability> abilityList = new ArrayList<Ability>();
-    private ArrayList <Effect> effectList = new ArrayList<Effect>();
+    private ArrayList <String> effectList = new ArrayList<String>();        // needs identification (int id)?
 
     public TextFileHandler(File characters, File gears, File moves, File abilities, File effects){
         extractCharactersFromTextFile(characters);
@@ -181,5 +180,5 @@ public class TextFileHandler {
 
     public ArrayList <Ability> getAbilityList(){  return abilityList;    }
 
-    public ArrayList <Effect> getEffectList(){  return effectList;    }
+    public ArrayList <String> getEffectList(){  return effectList;    }
 }
