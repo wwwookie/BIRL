@@ -18,6 +18,8 @@ public abstract class Usable {
         this.effect = effect;
     }
 
+    public Usable(){}
+
     public int getId(){ return id;  };
 
     public String getName(){    return name;    }
@@ -29,4 +31,9 @@ public abstract class Usable {
     public String getType(){ return type;  }
 
     public String getEffect(){ return effect;  }
+
+    public String toString(){
+        return "ID: " + id + "\nName: " + name + "\nDamage: " + damage + "\nHeal: " + heal + "\nType: " + type + "\nEffect: " + effect;
+
+    }
 }

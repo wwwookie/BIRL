@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import birl.Model.Character;
 import birl.Model.Gear;
 import birl.Model.Move;
-import birl.Model.Ability;
 
 // is one controller-class enough to handle whole application?
 // TODO: implement
@@ -20,19 +19,9 @@ import birl.Model.Ability;
 
 public class Controller {
     
-    ArrayList <Character> characterList;
-    ArrayList <Gear> gearList;
-    ArrayList <Move> moveList;
-    ArrayList <Ability> abilityList;
-
-    File homeDir;
-    File characterFile;
-    File gearFile;
-    File moveFile;
-    File abilityFile;
-    File effectFile;
-    
-    TextFileHandler tfh;
+    Character characters[];
+    Gear gears[];
+    Move moves[];
 
     public Controller(){
 
@@ -43,23 +32,23 @@ public class Controller {
 
     private void init(){
 
-        homeDir = new File(System.getProperty("user.home"));
-        characterFile = new File(homeDir, "Desktop/BIRL/game/data/characters/characters.txt");
-        gearFile = new File(homeDir, "Desktop/BIRL/game/data/gears/gears.txt");
-        moveFile = new File(homeDir, "Desktop/BIRL/game/data/moves/moves.txt");
-        abilityFile = new File(homeDir, "Desktop/BIRL/game/data/abilities/abilities.txt");
-        effectFile = new File(homeDir, "Desktop/BIRL/game/data/effects/effects.txt");
-
-        tfh  = new TextFileHandler(characterFile, gearFile, moveFile, abilityFile, effectFile);
-
-        extractAllDataFromFiles(tfh);
+        JsonFileHandler jfh = new JsonFileHandler();
+        characters = jfh.getCharacters();
+        gears = jfh.getGears();
+        moves = jfh.getMoves();
     }
 
-    private void extractAllDataFromFiles(TextFileHandler tfh){
+    public void printData(){
+        for(Character i : characters){
+            System.out.println(i.getName());
+        }
 
-        characterList = tfh.getCharacterList();
-        gearList = tfh.getGearList();
-        moveList = tfh.getMoveList();
-        abilityList = tfh.getAbilityList();
+        for(Gear i : gears){
+            System.out.println(i.getName());
+        }
+
+        for(Move i : moves){
+            System.out.println(i.getName());
+        }
     }
 }

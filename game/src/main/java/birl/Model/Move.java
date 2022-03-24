@@ -7,4 +7,7 @@ public class Move extends Usable{
         //TODO Auto-generated constructor stub
     }
     
+    public Move(){
+        super();
+    }
 }

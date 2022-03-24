@@ -11,6 +11,9 @@ public class Main {
 
         System.out.println(dbm.selectNameFromTableByID("character", 1));
 
+        Controller c = new Controller();
+        c.printData();
+
         // all DB -> Model traffic will happen here
         //https://www.freecodecamp.org/news/the-model-view-controller-pattern-mvc-architecture-and-frameworks-explained/
         
