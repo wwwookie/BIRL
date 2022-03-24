@@ -27,6 +27,12 @@ This is the BIRL update-log since November 2021:
 [19. März 2022]		worked on Usable and Fighter (fighter can now attack another fighter with gear/move)
 					added Duell class which will be the actual game loop
 
+[24. März 2022]		implemented use of json instead of txt files, makes life a lot easier (creds to luke).
+					TextFileHandler -> JsonFileHandler
+					added tests for json topics
+					added data initiation in Controller
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
-		- keep working on TextFileHandler/add gears/moves/abilities/effects in .txt files
+		- add gears and moves
+		- maybe start with GUI soon?
