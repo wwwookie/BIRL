@@ -1,0 +1,10 @@
+[
+    {
+        "id": "0",
+        "name": "Test-Gear",
+        "damage": "1",
+        "heal": "1",
+        "type": "Human",
+        "effect": "This gear is useless.."
+    }
+]

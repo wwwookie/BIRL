@@ -1,0 +1,114 @@
+[
+    {
+        "id": "1",
+        "name": "Drunk Douchebag",
+        "lvlScaling": "0.0",
+        "type": "Human",
+        "about": "This guy is that drunk, he cannot even hold his beer."
+    },
+    {
+        "id": "2",
+        "name": "Workaholic",
+        "lvlScaling": "0.0",
+        "type": "Human",
+        "about": "I swear I had lunch at least once last month..."
+    },
+    {
+        "id": "3",
+        "name": "Gamer Guy",
+        "lvlScaling": "0.0",
+        "type": "Human",
+        "about": "Dude...League of Legends is not even a videogame!"
+    },
+    {
+        "id": "4",
+        "name": "Gym Alpha",
+        "lvlScaling": "0.0",
+        "type": "Human",
+        "about": "Damn, look at me bruh, I am looking beefy as hell!"
+    },
+    {
+        "id": "5",
+        "name": "Long Wiener",
+        "lvlScaling": "0.0",
+        "type": "Animal",
+        "about": "Gimme sausy and I am ur friend!"
+    },
+    {
+        "id": "6",
+        "name": "Chicken",
+        "lvlScaling": "0.0",
+        "type": "Animal",
+        "about": "Bukbuk...BUUUK!"
+    },
+    {
+        "id": "7",
+        "name": "Fast Turtle",
+        "lvlScaling": "0.0",
+        "type": "Animal",
+        "about": "ZOOOM ZOOOM!"
+    },
+    {
+        "id": "8",
+        "name": "Hedge-Hog",
+        "lvlScaling": "0.0",
+        "type": "Animal",
+        "about": "This creature is a hedgehog-hog hybrid."
+    },
+    {
+        "id": "9",
+        "name": "Beer Barbar",
+        "lvlScaling": "0.0",
+        "type": "God",
+        "about": "I am the allfather of beer! BURP..."
+    },
+    {
+        "id": "10",
+        "name": "Jesus",
+        "lvlScaling": "0.0",
+        "type": "God",
+        "about": "I am the messiah bitch!"
+    },
+    {
+        "id": "11",
+        "name": "Richard Batsbak",
+        "lvlScaling": "0.0",
+        "type": "God",
+        "about": "Verdammte Scheiße...Riket! Dein Waaghen!"
+    },
+    {
+        "id": "12",
+        "name": "Aprodite",
+        "lvlScaling": "0.0",
+        "type": "God",
+        "about": "Hey cutie...Come be my slave!"
+    },
+    {
+        "id": "13",
+        "name": "Piranha Plant",
+        "lvlScaling": "0.0",
+        "type": "Plant",
+        "about": "Chomp Chomp Chomp!"
+    },
+    {
+        "id": "14",
+        "name": "Regular Cactus",
+        "lvlScaling": "0.0",
+        "type": "Plant",
+        "about": "This cactus spikes are even sharper than your mom..."
+    },
+    {
+        "id": "15",
+        "name": "Marihuana Plant",
+        "lvlScaling": "0.0",
+        "type": "Let's get high bruh.",
+        "about": "Plant"
+    },
+    {
+        "id": "16",
+        "name": "Wallflower",
+        "lvlScaling": "0.0",
+        "type": "Plant",
+        "about": "This is just a shy little wallflower enjoying the sun."
+    }
+]
