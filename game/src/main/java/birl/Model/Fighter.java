@@ -4,21 +4,23 @@ public class Fighter extends Character{
 
     private int fighterId;
     private int lvl;
-    private int baseHP;
     private int actualHP;
     private Move [] moves = new Move[3];
     private Gear gear;
 
-    public Fighter(int fighterId, int lvl, int baseHP, int characterId, String name, double lvlScaling, String type, String about) {
-        super(characterId, name, lvlScaling, type, about);
-
-        this.fighterId = fighterId;       // TODO: check if id is already existing in DB
+    public Fighter(Character character) {
         
-        if(lvl > 0 || lvl < 101)
-            this.lvl = lvl;
-        else System.err.println("Lvl must be greater than 0 and smaller than 101.");
+        this.id = character.getId();
+        this.name = character.getName();
+        this.baseHP = character.getBaseHP();
+        this.lvlScaling = character.getLvlScaling();
+        this.type = character.getType();
+        this.about = character.getAbout();
 
-        this.baseHP = baseHP;
+        this.lvl = 1;
+        this.actualHP = baseHP;
+
+        //this.fighterId = fighterId;       // TODO: search for new unused id in db and set it as fighterId
     }
 
     /** @return this fighters moves. */
@@ -37,7 +39,13 @@ public class Fighter extends Character{
     public void removeMove(int position){   moves[position] = null;    }
 
     /** @return this fighters id. */
-    public int getId(){ return id;  }
+    public int getFighterId(){ return fighterId;  }
+
+    /** @return this fighters lvl */
+    public int getLvl(){    return lvl; }
+
+    /** @return this fighters actualHP */
+    public int getActualHP(){   return actualHP;    }
 
     /** @return this fighters equiped gear. */
     public Gear getGear(){  return gear;   }
@@ -71,16 +79,16 @@ public class Fighter extends Character{
     public void use(int moveOrGearID, Fighter target) throws Exception{
 
         if(moveOrGearID == gear.getId()){
-            target.manipulateHP(gear.getDamage());
+            target.manipulateHP(-gear.getDamage());
             manipulateHP(gear.getHeal());
         } else if(moveOrGearID == moves[0].getId()){
-            target.manipulateHP(moves[0].getDamage());
+            target.manipulateHP(-moves[0].getDamage());
             manipulateHP(moves[0].getHeal());
-        } else if(moveOrGearID == moves[1].getId()){
-            target.manipulateHP(moves[1].getDamage());
+        } else if(moveOrGearID == moves[1].getId()){            // TODO: need to differentiate move and gear ids
+            target.manipulateHP(-moves[1].getDamage());
             manipulateHP(moves[1].getHeal());
         } else if(moveOrGearID == moves[2].getId()){
-            target.manipulateHP(moves[2].getDamage());
+            target.manipulateHP(-moves[2].getDamage());
             manipulateHP(moves[2].getHeal());
         } else throw new Exception("This fighter doesn't know this move or gear.");
 
