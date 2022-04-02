@@ -32,6 +32,10 @@ This is the BIRL update-log since November 2021:
 					added tests for json topics
 					added data initiation in Controller
 
+[2. April 2022]		changed relation between Character and Fighter [Fighter now uses a Character instance to get same values]
+					added FighterTest.java and tested fighting use() successfully
+					transfered changes to json files and JsonFileHandler
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- add gears and moves
