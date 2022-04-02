@@ -1,4 +1,4 @@
-/** Unit tests regarding TextFileHandler.java here. */
+/** Unit tests regarding JsonFileHandler.java here. */
 
 package birl;
 
