@@ -2,113 +2,129 @@
     {
         "id": "1",
         "name": "Drunk Douchebag",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Human",
+        "type": "HUMAN",
         "about": "This guy is that drunk, he cannot even hold his beer."
     },
     {
         "id": "2",
         "name": "Workaholic",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Human",
+        "type": "HUMAN",
         "about": "I swear I had lunch at least once last month..."
     },
     {
         "id": "3",
         "name": "Gamer Guy",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Human",
+        "type": "HUMAN",
         "about": "Dude...League of Legends is not even a videogame!"
     },
     {
         "id": "4",
         "name": "Gym Alpha",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Human",
+        "type": "HUMAN",
         "about": "Damn, look at me bruh, I am looking beefy as hell!"
     },
     {
         "id": "5",
         "name": "Long Wiener",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Animal",
+        "type": "ANIMAL",
         "about": "Gimme sausy and I am ur friend!"
     },
     {
         "id": "6",
         "name": "Chicken",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Animal",
+        "type": "ANIMAL",
         "about": "Bukbuk...BUUUK!"
     },
     {
         "id": "7",
         "name": "Fast Turtle",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Animal",
+        "type": "ANIMAL",
         "about": "ZOOOM ZOOOM!"
     },
     {
         "id": "8",
         "name": "Hedge-Hog",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Animal",
+        "type": "ANIMAL",
         "about": "This creature is a hedgehog-hog hybrid."
     },
     {
         "id": "9",
         "name": "Beer Barbar",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "God",
+        "type": "GOD",
         "about": "I am the allfather of beer! BURP..."
     },
     {
         "id": "10",
         "name": "Jesus",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "God",
+        "type": "GOD",
         "about": "I am the messiah bitch!"
     },
     {
         "id": "11",
         "name": "Richard Batsbak",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "God",
+        "type": "GOD",
         "about": "Verdammte Scheiße...Riket! Dein Waaghen!"
     },
     {
         "id": "12",
         "name": "Aprodite",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "God",
+        "type": "GOD",
         "about": "Hey cutie...Come be my slave!"
     },
     {
         "id": "13",
         "name": "Piranha Plant",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Plant",
+        "type": "PLANT",
         "about": "Chomp Chomp Chomp!"
     },
     {
         "id": "14",
         "name": "Regular Cactus",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Plant",
+        "type": "PLANT",
         "about": "This cactus spikes are even sharper than your mom..."
     },
     {
         "id": "15",
         "name": "Marihuana Plant",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Let's get high bruh.",
-        "about": "Plant"
+        "type": "PLANT",
+        "about": "Let's get high bruh."
     },
     {
         "id": "16",
         "name": "Wallflower",
+        "baseHP": "100",
         "lvlScaling": "0.0",
-        "type": "Plant",
+        "type": "PLANT",
         "about": "This is just a shy little wallflower enjoying the sun."
     }
 ]

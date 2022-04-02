@@ -4,7 +4,7 @@
         "name": "Test-Move",
         "damage": "1",
         "heal": "1",
-        "type": "Human",
+        "type": "HUMAN",
         "effect": "This move does nothing.."
     }
 ]

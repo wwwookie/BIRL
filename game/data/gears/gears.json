@@ -4,7 +4,7 @@
         "name": "Test-Gear",
         "damage": "1",
         "heal": "1",
-        "type": "Human",
+        "type": "HUMAN",
         "effect": "This gear is useless.."
     }
 ]
