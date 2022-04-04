@@ -1,5 +1,8 @@
 package birl.Controller;
 
+import birl.View.MainFX;
+import javafx.stage.Stage;
+
 public class Main {
     
     public static void main(String[] args) {
@@ -13,6 +16,13 @@ public class Main {
 
         Controller c = new Controller();
         c.printData();
+
+        try {
+            MainFX view = new MainFX();
+            view.start(new Stage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // all DB -> Model traffic will happen here
         //https://www.freecodecamp.org/news/the-model-view-controller-pattern-mvc-architecture-and-frameworks-explained/
