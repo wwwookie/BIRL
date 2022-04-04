@@ -36,7 +36,9 @@ This is the BIRL update-log since November 2021:
 					added FighterTest.java and tested fighting use() successfully
 					transfered changes to json files and JsonFileHandler
 
+[4. April 2022]		started with GUI, need to fix error "run-time components missing and required"
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- add gears and moves
-		- maybe start with GUI soon?
+		- work on GUI
