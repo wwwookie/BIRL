@@ -38,6 +38,8 @@ This is the BIRL update-log since November 2021:
 
 [4. April 2022]		started with GUI, need to fix error "run-time components missing and required"
 
+[7. April 2022]		fixed "run-time components missing and required" - hurrrray
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- add gears and moves
