@@ -36,11 +36,15 @@ This is the BIRL update-log since November 2021:
 					added FighterTest.java and tested fighting use() successfully
 					transfered changes to json files and JsonFileHandler
 
-[4. April 2022]		started with GUI, need to fix error "run-time components missing and required"
+[4. April 2022]		started with UI, need to fix error "run-time components missing and required"
 
 [7. April 2022]		fixed "run-time components missing and required" - hurrrray
+
+[28. April 2022]	error still occurs while compilation, only by clicking "run" on mainFX it works?
+					UI work, playing around with AnchorPane, since it's easy to design.
+					May need to use HBox or BorderPane instead, because it's way more flexible!
 
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- add gears and moves
-		- work on GUI
+		- work on UI
