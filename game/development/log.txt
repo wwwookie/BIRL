@@ -44,6 +44,10 @@ This is the BIRL update-log since November 2021:
 					UI work, playing around with AnchorPane, since it's easy to design.
 					May need to use HBox or BorderPane instead, because it's way more flexible!
 
+[13. Mai 2022]		Switched from Anchor to BorderPane as primaryPane
+					added PLAY button functionality
+					added GridPanes for choosing team
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- add gears and moves
