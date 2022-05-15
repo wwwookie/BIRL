@@ -32,7 +32,7 @@ public class Fighter extends Character{
     public void setMove(Move move, int position) {   
         if(type.equals(move.getType()))
             moves[position] = move;    
-        else System.err.println("Fighter can't learn move, type-missmatch.");
+        else System.err.println("Fighter can't learn move, fighter and move must be from same type.");
     }
 
     /** Removes move at @param position index. */

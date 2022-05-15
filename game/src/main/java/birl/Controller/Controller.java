@@ -1,8 +1,5 @@
 package birl.Controller;
 
-import java.io.File;
-import java.util.ArrayList;
-
 import birl.Model.Character;
 import birl.Model.Gear;
 import birl.Model.Move;
@@ -19,9 +16,9 @@ import birl.Model.Move;
 
 public class Controller {
     
-    Character characters[];
-    Gear gears[];
-    Move moves[];
+    private Character characters[];
+    private Gear gears[];
+    private Move moves[];
 
     public Controller(){
 
@@ -38,6 +35,9 @@ public class Controller {
         moves = jfh.getMoves();
     }
 
+    /**
+     * Prints all characters, moves and gears data loaded to the controller.
+     */
     public void printData(){
         for(Character i : characters){
             System.out.println(i.getName());
@@ -51,4 +51,10 @@ public class Controller {
             System.out.println(i.getName());
         }
     }
+
+    public Character[] getCharacters(){ return characters;  }
+
+    public Move[] getMoves(){   return moves;   }
+
+    public Gear[] getGears(){   return gears;   }
 }

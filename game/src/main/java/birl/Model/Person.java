@@ -1,3 +1,5 @@
+// this class will be needed in multiplayer mode, yet we only have singleplayer/local fights...
+
 package birl.Model;
 
 public class Person {
