@@ -48,7 +48,12 @@ This is the BIRL update-log since November 2021:
 					added PLAY button functionality
 					added GridPanes for choosing team
 
+[15. Mai 2022]		UI work on fighter selection
+					MVC not necessary anymore
+
 ----------------------------------------------------------
 TODO:	- figure out if dynamic query execution is needed
 		- add gears and moves
 		- work on UI
+		- check what's unnecessary since we don't use MVC anymore...
+		- should character individuality be removed? Better for local games
